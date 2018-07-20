@@ -53,7 +53,7 @@ Manchester City,      4-0, 2-0, Newcastle United
 ```
 
 Let's use the [`1-premierleague.csv`](https://github.com/footballcsv/eng-england/blob/master/2010s/2017-18/1-premierleague.csv) datafile in the `/2010s/2017-18` folder.
-Read in the all matches with the csv reader class from the sportdb-text library / gem.
+Read in all matches with the csv reader class from the sportdb-text library / gem:
 
 
 ``` ruby
@@ -154,10 +154,10 @@ will pretty print (pp):
      @won=12>, ...>
 ```
 
-Now let's format the standings for humans :-) in the classic compact table format.
+Now let's format the standings for humans :-) in the classic more compact table format.
 Let's start with
 showing only totals - no home/away break outs yet -
-in the first simple version / try:
+in the first simple version:
 
 ``` ruby
 standings.to_a.each do |l|
