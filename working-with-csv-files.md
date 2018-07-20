@@ -1,7 +1,7 @@
 # Working with CSV Files
 
 
-Let's build the standings table for the English Premier League (EPL) for the 2017/18 season from all 380 matches in the comma-seaprated values (.csv) format.
+Let's build the standings table for the English Premier League (EPL) for the 2017/18 season from all 380 matches in the comma-separated values (.csv) format.
 Example:
 
 ```
