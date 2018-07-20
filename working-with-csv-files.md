@@ -33,10 +33,9 @@ Example:
 Step 0: Download the free public domain [`/eng-england`](https://github.com/footballcsv/eng-england) dataset package / archive from the [football.csv org](https://footballcsv.github.io).
 
 What's the comma-separated values (.csv) format?
-
 It's the world's most popular tabular data interchange format in text.
 Values are separated - surprise, surprise - by commas (that is, `,`).
-One line is one record (that is, one match :-)).
+One line is one record, that is, one match :-).
 Example:
 
 ```
