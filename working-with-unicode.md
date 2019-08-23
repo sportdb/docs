@@ -2,7 +2,7 @@
 # Working with Unicode Characters Beyond A to Z (Basic Latin 7-Bit Characters) - Let's Go International! Let's Go World-Wide!
 
 
-Trivia Quiz: How many letters has the basic latin 7-bit alphabet
+Trivia Quiz: How many letters has the [basic latin 7-bit alphabet](https://en.wikipedia.org/wiki/ISO_basic_Latin_alphabet)
 or using the more common name, that is, the English alphabet?
 
 - (A)  24
