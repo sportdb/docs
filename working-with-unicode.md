@@ -22,8 +22,9 @@ And the answer is ...  Let's ask the ruby oracle:
 Let's go international! Let's go global! Let's go world wide!
 
 Let's use unicode characters and start with internationalization (i18n).
-Let's use the 1500+ football club names from
-the [open football.db clubs](https://github.com/openfootball/clubs) dataset.
+Let's use the 1500+ football club names from 100+ countries from
+the [open football.db clubs](https://github.com/openfootball/clubs) dataset
+for a real-world sample:
 
 ``` ruby
 require 'footballdb/clubs'
@@ -33,22 +34,22 @@ Club.all.size
 ```
 
 Football club names include:
-İnter Bakı PİK · Neftçi PFK · Qarabağ FK · Xäzär Länkäran FK ·
+Bayern München ·  1. FC Köln · Preußen Münster · 
 FC København · FC Vestsjælland ·
 JJK Jyväskylä ·
 LB Châteauroux · Évian TG FC ·
-Bayern München ·  1. FC Köln · Preußen Münster ·
 Widzew Łódź · Zagłębie Lubin ·
+İnter Bakı PİK · Qarabağ FK ·
 São Paulo FC · Atlético MG · EC Vitória ·
 and many more.
 
 
-Triva Quiz: How many extra letters have the 1500+ clubs names
-beyond the basic latin 7-bit alphabet?
+Triva Quiz: How many extra characters with accents or diacritic marks or joined together into a ligature 
+have the 1500+ clubs names from 100+ countries beyond the basic latin 7-bit alphabet?
 
-- (A)  13
-- (B)  33
-- (C)  63
+- (A)  More than 10
+- (B)  More than 30
+- (C)  More than 60
 - (D)  Other - Please, tell.
 
 And the answer is ...  Let's ask the ruby oracle
@@ -60,10 +61,10 @@ freq = Hash.new(0)
 clubs.each do |club|
   names = [club.name]+club.alt_names
   names.each do |name|
-    ## calculate the frequency table of letters, digits, etc.
+    # calculate the frequency table of letters, digits, etc.
     name.each_char do |ch|
-      next if ch.ord < 127     ## skip 7-bit basic latin letters, numbers, punctuations, etc.
-      next if ch =~ /[º]/      ## skip some 8-bit special non-letter chars too
+      next if ch.ord < 127     # skip 7-bit basic latin letters, numbers, etc.
+      next if ch =~ /[º]/      # skip some 8-bit special non-letter chars too
       freq[ch] += 1
     end
   end
@@ -75,7 +76,7 @@ freq.keys.sort.join
 #=> ÁÅÇÉÍÖÚßàáâãäåæçèéêëíîñóôõöøúüýþāăąćČčėęğīİıŁłńňőřŚŞşŠšţūźżŽžșț
 ```
 
-Wow. That's 63 more capital and small characters (!).
+Wow. That's 63 more characters (!).
 Did you know? Yes, there's a capital I with a dot `İ`
 and there's a small i without a dot `ı` and on and on.
 
@@ -85,7 +86,7 @@ Trivia Quiz: What's the official unicode name for `Á`?
 
 - (A) LATIN CAPITAL LETTER A WITH GRAVE
 - (B) LATIN CAPITAL LETTER A WITH ACUTE
-- (C) LATIN CAPITAL LETTER A WITH DIAERESIS
+- (C) LATIN CAPITAL LETTER A WITH MACRON
 - (D) LATIN CAPITAL LETTER A WITH CIRCUMFLEX
 
 
@@ -106,21 +107,21 @@ that returns the official Unicode name for a character / codepoint.
 ``` ruby
 require 'unicode/name'
 
-Unicode::Name.of( 'İ' )
+Unicode::Name.of( 'İ' )   # or Unicode::Name.of( "\u0130" )
 #=> "LATIN CAPITAL LETTER I WITH DOT ABOVE"
-Unicode::Name.of( 'ı' )
+Unicode::Name.of( 'ı' )   # or Unicode::Name.of( "\u0131" )
 #=> "LATIN SMALL LETTER DOTLESS I"
 ```
 
-See [`janlelis/unicode-name`](https://github.com/janlelis/unicode-name) for more documentation and how to use the unicode library / gem.
+See [`janlelis/unicode-name`](https://github.com/janlelis/unicode-name) for more documentation and on how to use the unicode library / gem.
 
 To wrap up - let's print all Unicode names and codepoints for the 63 characters
 beyond the basic 7-bit Latin alphabet:
 
 ``` ruby
-freq.keys.sort.each do |key|
-  name = Unicode::Name.of( key )
-  puts "#{key} - U+#{'%04X' % key.ord} (#{key.ord}) - #{name}"
+freq.keys.sort.each do |ch|
+  name = Unicode::Name.of( ch )
+  puts "#{ch} - U+#{'%04X' % ch.ord} (#{ch.ord}) - #{name}"
 end
 
 ```
