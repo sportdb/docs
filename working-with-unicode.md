@@ -107,9 +107,9 @@ that returns the official Unicode name for a character / codepoint.
 ``` ruby
 require 'unicode/name'
 
-Unicode::Name.of( 'İ' )   # or Unicode::Name.of( "\u0130" )
+Unicode::Name.of( 'İ' )   # or "\u0130" or "\u{130}" 
 #=> "LATIN CAPITAL LETTER I WITH DOT ABOVE"
-Unicode::Name.of( 'ı' )   # or Unicode::Name.of( "\u0131" )
+Unicode::Name.of( 'ı' )   # or "\u0131" or "\u{131}" 
 #=> "LATIN SMALL LETTER DOTLESS I"
 ```
 
