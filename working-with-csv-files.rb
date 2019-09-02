@@ -1,6 +1,6 @@
 require 'sportdb/text'
 
-matches = CsvMatchReader.read( 'eng-england/2010s/2017-18/1-premierleague.csv' )
+matches = CsvMatchReader.read( 'england/2010s/2019-20/eng.1.csv' )
 pp matches.size
 pp matches
 
