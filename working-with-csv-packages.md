@@ -25,6 +25,9 @@ source 'https://rubygems.org'
 gem 'sportdb-import'
 
 gem 'activerecord',  '~> 5.2'  ## workaround: latest version (6.0.0) requires ruby 2.4.4+
+
+gem 'sqlite3'      ## note: comment out if you use a differnt database
+#  gem 'pg'        ## note: uncomment if you use PostgreSQL (pg) 
 ```
 
 Now type / run:
