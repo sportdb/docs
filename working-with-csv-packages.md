@@ -1,7 +1,7 @@
 # Working with CSV Packages
 
 
-Let's import all English football leagues and matches (from 1888-89 to today)
+Let's import all English football leagues, clubs and matches (from 1888-89 to today)
 from the [football.csv package](https://github.com/footballcsv/england) into an SQL database.
 
 Let's start from zero / scratch and let's
