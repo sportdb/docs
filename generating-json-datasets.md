@@ -6,8 +6,8 @@ the [football.json datasets](https://github.com/openfootball/football.json)
 that offer 
 free open public domain football data in the JSON (JavaScript Object Notation) 
 data interchange format
-that you can use as (static) web services with no API key or signup required ;-)
-too.
+that you can use as (static) web services with no API key or signup required ;-), for example.
+
 
 Football leagues include:
 
