@@ -202,4 +202,8 @@ and if you open up `2019-20/eng.1.json` it reads:
 }  
 ```
 
-Voila. Enjoy the beautiful game with ruby.
+That's it.
+Bonus: Why not generate football.json datasets for the Bundesliga, La Liga, Ligue 1, 
+Seria A, or your very own league? Yes, you can.
+
+Enjoy data wrangling and the beautiful game with ruby.
