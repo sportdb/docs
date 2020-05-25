@@ -7,8 +7,6 @@ that offer
 free open public domain football data in the JSON (JavaScript Object Notation) 
 data interchange format
 that you can use as (static) web services with no API key or signup required ;-), for example.
-
-
 Football leagues include:
 
 - English Premier League
@@ -26,7 +24,7 @@ Use git clone or download and
 unpack the zip archive.
 
 Let's start from scratch / zero and let's build a single-file SQLite database
-(e.g. `england`):
+(e.g. `./england.db`):
 
 
 ``` ruby
