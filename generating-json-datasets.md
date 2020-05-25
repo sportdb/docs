@@ -2,7 +2,7 @@
 
 
 Let's update and (re)generate
-the [football.json datasets](https://github.com/openfootball/football.json) 
+the [/football.json datasets](https://github.com/openfootball/football.json) 
 that offer 
 free open public domain football data in the JSON (JavaScript Object Notation) 
 data interchange format
