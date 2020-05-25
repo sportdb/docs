@@ -9,7 +9,7 @@ data interchange format
 that you can use as (static) web services with no API key or signup required ;-)
 too.
 
-Football Leagues include:
+Football leagues include:
 
 - English Premier League
 - Deutsche Bundesliga
@@ -18,36 +18,42 @@ Football Leagues include:
 - and more
 
 
-## Step 1 - Let's read in the sources in football.txt into SQLite (e.g. `england.db`)
+## Step 1 - Let's read in the sources in football.txt into an SQL database
 
 Let's start with the English Premier League.
 Get a copy of the [/england datasets](https://github.com/openfootball/england). 
 Use git clone or download and
-unpack the archive.
+unpack the zip archive.
+
+Let's start from scratch / zero and let's build a single-file SQLite database
+(e.g. `england`):
 
 
-```  ruby
+``` ruby
 require 'sportdb/readers'
 
 
 SportDb.connect( adapter:  'sqlite3',
                  database: './england.db' )
 SportDb.create_all       ## build database schema (tables, indexes, etc.)
-
-## assumes football.db datasets for England in ./england directory
-SportDb.read( './england' )
 ```
 
+Next let's read in the sources into the SQL database:
+
+``` ruby
+## assumes football.db datasets for England in local ./england directory
+SportDb.read( './england' )
+```
 
 And now onto...
 
 
-## Step 2 - Let's generate the JSON datasets using the SQLite database
+## Step 2 - Let's generate the JSON datasets using the SQL database
 
 Let's code a `gen_json` helper where you pass in the 
 league code (e.g. `eng.1` for the English Premier League)
 and the output root directory where the new datasets get filed in 
-new subdirectories by season (e.g. `/2018-19`, `/2019-20`, etc.) 
+new subdirectories season by season (e.g. `/2018-19`, `/2019-20`, etc.) 
 
 ``` ruby
 def gen_json( league_key, out_root: )
@@ -61,10 +67,10 @@ def gen_json( league_key, out_root: )
      puts "  matches.count: #{event.matches.count}"
 
      ## build path e.g.
-     ##  2014-15/at.1.clubs.json
+     ##  2019-20/eng.1.clubs.json
 
      league_basename = event.league.key   ## e.g. eng.1
-     season_basename = event.season.name.sub('/', '-')  ## e.g. change 2014/15 to 2014-15
+     season_basename = event.season.name.sub('/', '-')  ## e.g. change 2019/20 to 2019-20
 
      out_dir   = "#{out_root}/#{season_basename}"
      ## make sure folders exist
