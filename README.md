@@ -6,3 +6,14 @@
 - [Generating Football JSON Datasets](generating-json-datasets.md)
 
 
+
+## HTTP JSON API Quick Starters
+
+- [sport.db.starter](sport.db.starter) - Build Your Own HTTP JSON API (Ruby Edition)
+
+
+
+## Questions? Comments?
+
+Yes, you can. More than welcome.
+See [Help & Support »](https://github.com/openfootball/help)
